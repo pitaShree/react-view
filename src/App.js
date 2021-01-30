@@ -1,28 +1,18 @@
 import React, { Component } from 'react';
-import CustomComponent from './Custom';
-export const MyContext = React.createContext();
+import Header from './componentfolder/Header';
+import Footer from './componentfolder/Footer';
+import Home from './layouts/Home';
 
 class App extends Component {
-  constructor(){
-    super();
-
-    this.state = {
-      name: 'Rahul',
-      roll: 101
+    render() {
+        return (
+            <React.Fragment>
+                <Header />
+                    <Home />
+                <Footer />
+            </React.Fragment>
+        );
     }
-  }
-
-  handleButton = () => {
-    this.setState({roll: this.state.roll +1});
-  }
-  render() {
-    return (
-      <MyContext.Provider value={this.state}>
-        <h1>App Component</h1>
-        <CustomComponent />
-      </MyContext.Provider >
-    );
-  }
 }
 
 export default App;
